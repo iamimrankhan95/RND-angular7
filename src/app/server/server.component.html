@@ -1,2 +1,16 @@
-<h1>{{name}}</h1> 
-<!-- we can place string in curly braces or anyting that can be converted easily into string and any method that returns a string like {{getName()}} -->
+<div >
+  <h1>{{name}}</h1> 
+<!-- we can place string in curly braces or anyting that can be converted easily into string 
+    and any method that returns a string like {{getName()}} -->
+
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverName"> <!--two way binding-->
+<p  [ngStyle]="{backgroundColor:getColor()}" [ngClass]="{online:serverStatus===true}">{{ serverName }}</p>
+ <!--ngStyle is default Style directive, [] is for applying property binding-->
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer" 
+  (click)="onCreateServer()">Add Server</button><!--property binding--> <!--event binding--> 
+</div>
