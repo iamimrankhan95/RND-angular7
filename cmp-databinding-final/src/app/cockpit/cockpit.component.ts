@@ -10,7 +10,7 @@ export class CockpitComponent implements OnInit {
   @Output('bpCreated') blueprintCreated = new EventEmitter<{serverName: string, serverContent: string}>();
   // newServerName = '';
   // newServerContent = '';
-  @ViewChild('serverContentInput') serverContentInput: ElementRef;
+  @ViewChild('serverContentInput') serverContentInput: ElementRef; // now we can get the dom of this reference variable
 
   constructor() { }
 
@@ -18,6 +18,7 @@ export class CockpitComponent implements OnInit {
   }
 
   onAddServer(nameInput: HTMLInputElement) {
+    //this.serverContentInput.nativeElement.value="somthing"// this is not recomended// use viewChild for get not set
     this.serverCreated.emit({
       serverName: nameInput.value,
       serverContent: this.serverContentInput.nativeElement.value

@@ -1,8 +1,9 @@
+<!--3 ways of interact between component, input/outpu, localReference, ng-content-->
 <div class="container">
   <app-cockpit
     (serverCreated)="onServerAdded($event)"
     (bpCreated)="onBlueprintAdded($event)"
-  ></app-cockpit>
+  ></app-cockpit> <!--severCreated value will be passed to $event from cockpitComponent(EMIT() ) and appComponent(CATCH) will make use $event-->
   <hr>
   <div class="row">
     <div class="col-xs-12">
