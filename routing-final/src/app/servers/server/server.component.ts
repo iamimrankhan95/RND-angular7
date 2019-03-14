@@ -17,20 +17,24 @@ export class ServerComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this is for queryParam to watchout
     this.route.data
       .subscribe(
         (data: Data) => {
           this.server = data['server'];
         }
       );
-    // const id = +this.route.snapshot.params['id'];
-    // this.server = this.serversService.getServer(id);
-    // this.route.params
-    //   .subscribe(
-    //     (params: Params) => {
-    //       this.server = this.serversService.getServer(+params['id']);
-    //     }
-    //   );
+
+      /*this is for watchout the page,as angular doesnt change the content of page unless u push him to, this works as push notificaiton whenever link id is changed
+    const id = +this.route.snapshot.params['id'];
+    this.server = this.serversService.getServer(id);
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.server = this.serversService.getServer(+params['id']);
+        }
+      );
+    */
   }
 
   onEdit() {

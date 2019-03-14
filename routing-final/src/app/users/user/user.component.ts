@@ -18,7 +18,7 @@ export class UserComponent implements OnInit, OnDestroy {
       id: this.route.snapshot.params['id'],
       name: this.route.snapshot.params['name']
     };
-    this.paramsSubscription = this.route.params
+    this.paramsSubscription = this.route.params // subscribe works with observable, its when aysnc need, if any task needs to be /may will be done in future but you dont know exaclty how much time it will take then use observable,subcribtion.
       .subscribe(
         (params: Params) => {
           this.user.id = params['id'];
@@ -26,7 +26,7 @@ export class UserComponent implements OnInit, OnDestroy {
         }
       );
   }
-
+// observable dosent get distroyed when component is distroyed when component is changed. but angular distroys the observables behind. we can also do it manually.
   ngOnDestroy() {
     this.paramsSubscription.unsubscribe();
   }

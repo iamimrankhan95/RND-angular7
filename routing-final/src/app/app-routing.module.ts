@@ -35,7 +35,8 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [
     // RouterModule.forRoot(appRoutes, {useHash: true})
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes)//The method is called forRoot() because you configure the router at the application's root level. //
+    //The forRoot() method supplies the service providers and directives needed for routing, and performs the initial navigation based on the current browser URL.
   ],
   exports: [RouterModule]
 })

@@ -1,3 +1,4 @@
+//this service simply guard routing
 import {
   CanActivate,
   ActivatedRouteSnapshot,
